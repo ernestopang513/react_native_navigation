@@ -2,13 +2,15 @@ import { NavigationContainer } from "@react-navigation/native"
 import { Text, View } from "react-native"
 import './gesture-handler';
 import { StackNavigator } from "./presentation/routes/StackNavigator";
+import { SideMenuNavigator } from "./presentation/routes/SideMenuNavigator";
 
 
 
 export const App = () => {
   return (
     <NavigationContainer>
-      <StackNavigator/>
+      {/* <StackNavigator/> */}
+      <SideMenuNavigator/>
     </NavigationContainer>
   )
 }
