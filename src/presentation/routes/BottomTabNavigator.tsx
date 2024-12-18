@@ -7,6 +7,7 @@ import { Text } from 'react-native';
 import { TopTabNavigator } from './TopTabNavigator';
 import { StackNavigator } from './StackNavigator';
 import { HamburgerMenu } from '../components/shared/HamburgerMenu';
+import { IonIcon } from '../components/shared/IonIcon';
 
 
 const Tab = createBottomTabNavigator();
@@ -16,6 +17,7 @@ export const BottomTabNavigator = () => {
     <Tab.Navigator
 
       screenOptions={{
+        tabBarActiveTintColor: globalColors.primmary,
         tabBarStyle: {
           backgroundColor: globalColors.background,
           // backgroundColor: 'white',
@@ -39,9 +41,9 @@ export const BottomTabNavigator = () => {
       }}
     
     >
-      <Tab.Screen name="Tab1" options={{title: 'Tab1', tabBarIcon: ({color}) => (<Text style={{color}} >Tab1</Text>)}} component={Tab1Screen} />
-      <Tab.Screen name="Tab2" options={{title: 'Tab2', tabBarIcon: ({color}) => (<Text style={{color}} >Tab2</Text>)}} component={TopTabNavigator} />
-      <Tab.Screen name="Tab3" options={{title: 'Tab3', tabBarIcon: ({color}) => (<Text style={{color}} >Tab3</Text>)}} component={StackNavigator} />
+      <Tab.Screen name="Tab1" options={{title: 'Tab1', tabBarIcon: ({color}) => (<IonIcon name='logo-octocat' styleProp={{color}} size={25}/>)}} component={Tab1Screen} />
+      <Tab.Screen name="Tab2" options={{title: 'Tab2', tabBarIcon: ({color}) => (<IonIcon name='logo-windows' styleProp={{color}} size={25}/>)}} component={TopTabNavigator} />
+      <Tab.Screen name="Tab3" options={{title: 'Tab3', tabBarIcon: ({color}) => (<IonIcon styleProp={{color}}  name='logo-react' size={25}/>)}} component={StackNavigator} />
     </Tab.Navigator>
   );
 }

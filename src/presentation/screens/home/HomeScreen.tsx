@@ -4,22 +4,25 @@ import {  DrawerActions, type NavigationProp, useNavigation } from "@react-navig
 import { PrimaryButton } from "../../components/shared/PrimaryButton";
 import  type { RootStackParams } from "../../routes/StackNavigator";
 import { useEffect } from "react";
+import { HamburgerMenu } from "../../components/shared/HamburgerMenu";
 
 export const HomeScreen = () => {
 
   const navigation = useNavigation<NavigationProp<RootStackParams>>();
 
-  useEffect(()=>{
-    navigation.setOptions({
-      headerLeft: () => (
-        <Pressable onPress = { () => navigation.dispatch(DrawerActions.toggleDrawer)} >
-          <Text>Menu</Text>
-        </Pressable>  
-      )
-    })
-  }, [])
+  // useEffect(()=>{
+  //   navigation.setOptions({
+  //     headerLeft: () => (
+  //       <Pressable onPress = { () => navigation.dispatch(DrawerActions.toggleDrawer)} >
+  //         <Text>Menu</Text>
+  //       </Pressable>  
+  //     )
+  //   })
+  // }, [])
 
   return (
+    <>
+    <HamburgerMenu/>
     <View style={globalStyles.container} >
        <PrimaryButton 
         onPress = {() => navigation.navigate('Products')} 
@@ -34,5 +37,6 @@ export const HomeScreen = () => {
         label = 'Profile'
       />
     </View>
+    </>
   ) 
 }
